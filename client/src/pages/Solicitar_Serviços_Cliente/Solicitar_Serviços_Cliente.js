@@ -1,10 +1,10 @@
 import './CSS/Solicitar_Serviços_Cliente.css';
 import React, {useState,useEffect} from 'react';
 import axios from "axios";
-import ta from './componetes/ta';
 
 
-function App() {
+
+function SolicitarServiçosCliente() {
   const [values, setvalues] = useState();
   
   const handlechangevalues = (value) =>{
@@ -32,21 +32,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <header>
-          <h1>CONECTA.Tec</h1>
-          <div className="user-info">
-            <span className="user-icon">👤</span>
-            <span className="user-name">Cliente</span>
-            <a href="index.html" className="logout">Sair</a>
-          </div>
-        </header>
-        <nav>
-          <ul>
-            <li><a href="Solicitar_Serviços_Cliente.html">Novo Serviço</a></li>
-            <li><a href="Tela_inicial_Cliente.js">Solicitações</a></li>
-            <li><a href="Tela_de_Analises_Cliente.html">Análises</a></li>
-          </ul>
-        </nav>
+        
         <main>
           <form>
             <div id="form">
@@ -74,4 +60,4 @@ function App() {
 }
 
 
-export default App;
+export default SolicitarServiçosCliente;
