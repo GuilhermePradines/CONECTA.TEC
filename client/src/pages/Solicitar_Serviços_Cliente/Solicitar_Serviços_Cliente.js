@@ -1,4 +1,4 @@
-import './CSS/Solicitar_Serviços_Cliente.css';
+import './Solicitar_Serviços_Cliente.css';
 import React, {useState,useEffect} from 'react';
 import axios from "axios";
 

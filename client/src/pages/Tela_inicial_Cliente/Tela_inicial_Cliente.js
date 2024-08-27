@@ -1,5 +1,5 @@
 import React from 'react';
-import './CSS/Tela_inicial_Cliente.css'; // Certifique-se de que o caminho está correto
+import './Tela_inicial_Cliente.css'; // Certifique-se de que o caminho está correto
 
 function TelaInicialCliente() {
   return (
