@@ -1,0 +1,5 @@
+mysql 
+express 
+cors 
+nodemon
+react-router-dom

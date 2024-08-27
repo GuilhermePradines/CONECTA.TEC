@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #2e2f50;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.user-name {
+    margin-right: 20px;
+}
+
+.logout {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #f8c471;
+    padding: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3) ;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+div.t{
+    display: flex;
+    margin-top: 100px;
+}
+
+
+
+
+
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  max-width: 1000px;
+  height: 450px;
+  margin: 0 auto;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0;
+}
+
+tbody {
+  white-space: nowrap;
+}
+
+th{
+  padding: 5px 109.3px;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+td {
+  padding: 15px 109.3px;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  vertical-align: bottom;
+}
+
+#status{
+    border-right-width: 0;
+}
+
+
+@media (max-width: 1000px){
+    th{
+        padding: 5px 90px;
+        border-top-width: 0;
+        border-left-width: 0;
+    }
+      
+    td{
+        padding: 15px 90px;
+        border-top-width: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+
+    table{
+        max-width: 875px;
+    }
+}
+
+@media (max-width: 674px){
+    th{
+        padding: 5px 50px;
+        border-top-width: 0;
+        border-left-width: 0;
+    }
+      
+    td{
+        padding: 15px 50px;
+        border-top-width: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+    table{
+        max-width: 625px;
+    }
+}
+
+@media (max-width: 420px){
+    th{
+        padding: 5px 20px;
+        border-top-width: 0;
+        border-left-width: 0;
+    }
+      
+    td{
+        padding: 15px 20px;
+        border-top-width: 0;
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+    
+    .user-name{
+        display: none;
+        
+    }
+    .user-icon{
+        margin-right: 0;
+    }
+    
+}
