@@ -1,48 +1,31 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import './Tela_inicial_Cliente.css'; // Certifique-se de que o caminho está correto
+import axios from 'axios';
+import Tabela from '../../components/Tabelas';
+
+
 
 function TelaInicialCliente() {
-  return (
-    <div className="container">
-      
+  const [listItens,setListItens] = useState ([]);
+  
 
+  useEffect(()=>{
+      async function fetchData(){
+        const response = await axios.get("http://localhost:3001/getta")
+    
+        setListItens(response.data)
+        console.log(response.data)
+      }
+      fetchData()
+  },[])
+  
+  return (
+
+  
+
+    <div className="container">
       <div className="t">
-        <table border="1">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Tipo de Serviço</th>
-              <th id="status">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>AUT-333</td>
-              <td>QUALIFICAÇÃO</td>
-              <td>ANÁLISE PENDENTE</td>
-            </tr>
-            <tr>
-              <td>AUT-333</td>
-              <td>QUALIFICAÇÃO</td>
-              <td>ANÁLISE PENDENTE</td>
-            </tr>
-            <tr>
-              <td>AUT-333</td>
-              <td>QUALIFICAÇÃO</td>
-              <td>ANÁLISE PENDENTE</td>
-            </tr>
-            <tr>
-              <td>AUT-333</td>
-              <td>QUALIFICAÇÃO</td>
-              <td>ANÁLISE PENDENTE</td>
-            </tr>
-            <tr>
-              <td>AUT-333</td>
-              <td>QUALIFICAÇÃO</td>
-              <td>ANÁLISE PENDENTE</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabela dados = {listItens}/>
       </div>
     </div>
   );

@@ -11,34 +11,38 @@ const db = mysql.createPool({
 });
 
 app.use(express.json());
-app.use(cors()); 
-
-
-
+app.use(cors({
+    origin: '*'
+}));
 
 app.post("/solicitacao", (req, res) => {
-    const { equipamento} = req.body;
-    const {Servico} = req.body;
-    const {observacoes } = req.body;
+    const { equipamento, Servico, observacoes } = req.body;
 
-    let sql = "INSERT INTO solicitacao (equipamento, Servico, observacoes) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO solicitacao (equipamento, Servico, observacoes) VALUES (?, ?, ?)";
 
-    db.query(sql,[equipamento,Servico,observacoes], (err,result)=>{
-        console.log(err)
+    db.query(sql, [equipamento, Servico, observacoes], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ message: "Erro ao inserir a solicitação." });
+        } else {
+            res.status(201).send({ message: "Solicitação inserida com sucesso!" });
+        }
     });
 });
 
-app.get("/getta", (req,res)=>{
+app.get("/getta", (req, res) => {
+    const sql = "SELECT * FROM solicitacao";
+    db.query(sql, (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ message: "Erro ao buscar as solicitações." });
+        } else {
+            res.status(200).send(result);
+        }
+    });
+});
 
-    let sql = "SELECT * FROM solicitacao";
-    db.query(sql,(err,reulst)=>{
-        if(err) console.log(err);
-        else res.send(reulst);
-    })
-})
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
 });
-
-
 

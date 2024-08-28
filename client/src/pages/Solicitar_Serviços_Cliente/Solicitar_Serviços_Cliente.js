@@ -18,7 +18,7 @@ function SolicitarServiçosCliente() {
     axios.get("http://localhost:3001/getta").then((Response)=>{
       console.log(Response);
     })
-  })
+  },[] )
 
   const handleclikbutton = () =>{
     axios.post("http://localhost:3001/solicitacao",{
@@ -26,7 +26,7 @@ function SolicitarServiçosCliente() {
       Servico:values.Servico,
       observacoes:values.observacoes,
 
-    });
+    }).then((Response)=>{console.log(Response)});
 
   }
   return (
@@ -49,7 +49,7 @@ function SolicitarServiçosCliente() {
                 <textarea id="observacoes" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues}></textarea>
               </div>
               <div id="botao_1">
-                <button type="submit" id="butao" onClick={()=> handleclikbutton()}>Solicitar</button>
+                <button type="submit" id="butao" onClick ={handleclikbutton}>Solicitar</button>
               </div>
             </div>
           </form>
