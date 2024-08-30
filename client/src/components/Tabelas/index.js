@@ -1,8 +1,7 @@
 import React from "react";
-
+import "./solicitar.css"
 export default function Tabela({ dados }) {
-  console.log("diogo é gado");
-  console.log(dados); // Imprime os dados passados como prop
+
 
   return (
     <table border="1">

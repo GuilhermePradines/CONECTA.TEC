@@ -1,0 +1,39 @@
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  max-width: 1000px;
+  height: 450px;
+  margin: 0 auto;
+  display: block;
+  overflow-x: auto;
+  border-spacing: 0;
+}
+
+tbody {
+  white-space: nowrap;
+}
+
+th{
+  padding: 5px 90px;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+td {
+  padding: 15px 90px;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  vertical-align: bottom;
+}

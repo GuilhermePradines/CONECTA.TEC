@@ -1,5 +1,5 @@
 import './Solicitar_Serviços_Cliente.css';
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from "axios";
 
 
@@ -14,11 +14,7 @@ function SolicitarServiçosCliente() {
       
     }))
   }
-  useEffect(()=>{
-    axios.get("http://localhost:3001/getta").then((Response)=>{
-      console.log(Response);
-    })
-  },[] )
+
 
   const handleclikbutton = () =>{
     axios.post("http://localhost:3001/solicitacao",{
@@ -38,18 +34,18 @@ function SolicitarServiçosCliente() {
             <div id="form">
               <div>
                 <label htmlFor="equipamento">Equipamento:</label><br />
-                <input type="text" id="equipamento" name="equipamento" className="equipamento" onChange={handlechangevalues}/>
+                <input type="text" maxLength="30" id="equipamento" name="equipamento" className="equipamento" onChange={handlechangevalues}/>
               </div>
               <div>
                 <label htmlFor="Servico">Serviço:</label><br />
-                <input type="text" id="Servico" name="Servico" className="Servico" onChange={handlechangevalues} />
+                <input type="text" maxLength="30" id="Servico" name="Servico" className="Servico" onChange={handlechangevalues} />
               </div>
               <div>
                 <label htmlFor="observacoes">MOTIVOS/OBSERVAÇÕES:</label><br />
-                <textarea id="observacoes" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues}></textarea>
+                <textarea id="observacoes" maxLength="30" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues}></textarea>
               </div>
               <div id="botao_1">
-                <button type="submit" id="butao" onClick ={handleclikbutton}>Solicitar</button>
+                <button type="submit" className="butao" onClick ={handleclikbutton}>Solicitar</button>
               </div>
             </div>
           </form>

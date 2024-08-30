@@ -1,26 +1,24 @@
-import './stylee.css'
+import './Header.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
-function Header (){
+function Header_Tecnico (){
     return(
         <div className="container">
             <header className='header'>
             <h1>CONECTA.Tec</h1>
             <div className="user-info">
                 <span className="user-icon">👤</span>
-                <span className="user-name">Cliente</span>
+                <span className="user-name">Tecnico</span>
                 <Link to= "/">Sair</Link>
             </div>
             </header>
-            <nav>
+            <nav className='nav'>
                 <ul>
-                    <li><Link to="/SolicitarServiçosCliente">Nova Solicitações</Link></li>
-                    <li><Link to="/Tela_inicial_Cliente">Solicitações</Link></li>
-                    <li><Link to="/Tela_de_Analises_Cliente">Análises</Link></li>
+                    <li><Link to="/SolicitarAprovacaoTecnico">test</Link></li>
                 </ul>
             </nav>
         </div>
     );
 }
 
-export default Header
+export default Header_Tecnico

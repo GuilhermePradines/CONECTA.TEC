@@ -1,0 +1,70 @@
+.body{
+    
+    height: 100vh;
+    background-image: url(tela.png) ;
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    background-repeat: no-repeat;
+    margin: 0;
+    margin-bottom: 0;
+    align-items: center;
+    align-content: center;
+}
+#geral{
+    align-content: center;
+    grid-area: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-height: max-content;
+    justify-content: space-around;
+    
+    gap: 40px;
+
+}
+.header1{
+    width: 100vh;
+    font-style: italic;
+    font-size: 65px;
+    white-space: normal;
+}
+#logar{
+    width: 40vh;
+    display: flex;
+    gap: 20px;
+    flex-direction:column
+
+    
+}
+#caixa_txt{
+    
+    height: 40px;
+}
+#butao{
+    background-color: gray;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 black;
+    color: black;
+    display: block;
+    font-size: 1rem;
+    padding: .75rem 0.75rem ;
+    max-width: 14rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 120px;
+    
+    
+}
+#butao:hover{
+    cursor: pointer;
+    background-color: rgb(0, 229, 255);
+}
+
+#botao{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+h1{
+    color: orange;
+}
