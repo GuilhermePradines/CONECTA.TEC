@@ -19,9 +19,12 @@ function SolicitarServiçosCliente() {
   const handleclikbutton = () =>{
     axios.post("http://localhost:3001/solicitacao",{
       equipamento: values.equipamento,
-      Servico:values.Servico,
+      servico:values.servico,
       observacoes:values.observacoes,
-
+      valor: '00',
+      parecer_tec: "",
+      status_c: "ANÁLISE PENDENTE",
+      status_t :"PENDENTE",
     }).then((Response)=>{console.log(Response)});
 
   }
@@ -34,15 +37,15 @@ function SolicitarServiçosCliente() {
             <div id="form">
               <div>
                 <label htmlFor="equipamento">Equipamento:</label><br />
-                <input type="text" maxLength="30" id="equipamento" name="equipamento" className="equipamento" onChange={handlechangevalues}/>
+                <input type="text" maxLength="30" id="equipamento" name="equipamento" className="equipamento" onChange={handlechangevalues} required/>
               </div>
               <div>
-                <label htmlFor="Servico">Serviço:</label><br />
-                <input type="text" maxLength="30" id="Servico" name="Servico" className="Servico" onChange={handlechangevalues} />
+                <label htmlFor="servico">Serviço:</label><br />
+                <input type="text" maxLength="30" id="servico" name="servico" className="servico" onChange={handlechangevalues} required/>
               </div>
               <div>
                 <label htmlFor="observacoes">MOTIVOS/OBSERVAÇÕES:</label><br />
-                <textarea id="observacoes" maxLength="30" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues}></textarea>
+                <textarea id="observacoes" maxLength="30" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues} required></textarea>
               </div>
               <div id="botao_1">
                 <button type="submit" className="butao" onClick ={handleclikbutton}>Solicitar</button>

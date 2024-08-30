@@ -14,7 +14,7 @@ function TelaInicialCliente() {
         const response = await axios.get("http://localhost:3001/getta")
     
         setListItens(response.data)
-        
+        console.log(response.data)
       }
       fetchData()
   },[])

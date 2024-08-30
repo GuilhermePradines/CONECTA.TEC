@@ -1,6 +1,6 @@
 import React from "react";
-import "./solicitar.css"
-export default function Tabela({ dados }) {
+
+export default function Tabela_Analise({ dados }) {
 
 
   return (
@@ -8,7 +8,9 @@ export default function Tabela({ dados }) {
       <thead>
         <tr>
           <th>ID</th>
-          <th>Tipo de Serviço</th>
+          <th>Equipamento</th>
+          <th>Serviço</th>
+          <th>Valor</th>
           <th id="status">Status</th>
         </tr>
       </thead>
@@ -17,6 +19,8 @@ export default function Tabela({ dados }) {
           <tr key={item.id}>
             <td>{item.id}</td>
             <td>{item.equipamento}</td>
+            <td>{item.servico}</td> 
+            <td>R$ {item.valor}</td> 
             <td>{item.status_c}</td> 
           </tr>
         ))}

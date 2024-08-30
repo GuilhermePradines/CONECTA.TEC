@@ -7,7 +7,7 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "password",
-    database: "conecta_tec",
+    database: "conecta_tec_completo",
 });
 
 app.use(express.json());
@@ -16,11 +16,11 @@ app.use(cors({
 }));
 
 app.post("/solicitacao", (req, res) => {
-    const { equipamento, Servico, observacoes } = req.body;
+    const { equipamento, servico, observacoes , valor, parecer_tec, status_c, status_t } = req.body;
 
-    const sql = "INSERT INTO solicitacao (equipamento, Servico, observacoes) VALUES (?, ?, ?)";
-
-    db.query(sql, [equipamento, Servico, observacoes], (err, result) => {
+    const sql = "INSERT INTO solicitacao (equipamento, servico, observacoes,valor,parecer_tec,status_c,status_t) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    console.log(req.body)
+    db.query(sql, [equipamento, servico, observacoes,valor , parecer_tec, status_c, status_t], (err, result) => {
         if (err) {
             console.error(err);
             res.status(500).send({ message: "Erro ao inserir a solicitação." });

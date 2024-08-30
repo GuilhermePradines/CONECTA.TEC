@@ -1,39 +1,47 @@
-table,
-th,
-td {
-  border: 1px solid;
-}
-
+/* Estilo Geral da Tabela */
 table {
-  width: 100%;
-  max-width: 1000px;
-  height: 450px;
-  margin: 0 auto;
-  display: block;
-  overflow-x: auto;
-  border-spacing: 0;
-}
-
-tbody {
-  white-space: nowrap;
-}
-
-th{
-  padding: 5px 90px;
-  border-top-width: 0;
-  border-left-width: 0;
-}
-
-td {
-  padding: 15px 90px;
-  border-top-width: 0;
-  border-left-width: 0;
-  border-right-width: 0;
-}
-
-th {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  vertical-align: bottom;
-}
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
+  
+  /* Estilo das Células da Tabela */
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo do Cabeçalho */
+  th {
+    background-color: #f4f4f4;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  /* Estilo das Linhas Alternadas */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo das Linhas ao Passar o Mouse */
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Espaçamento e Layout do Cabeçalho */
+  thead th {
+    padding: 12px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    th, td {
+      padding: 8px;
+    }
+  }
+  

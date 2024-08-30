@@ -5,7 +5,7 @@ function Header_Tecnico (){
     return(
         <div className="container">
             <header className='header'>
-            <h1>CONECTA.Tec</h1>
+            <h1><Link to= "/Tela_tecnico">CONECTA.Tec</Link></h1>
             <div className="user-info">
                 <span className="user-icon">👤</span>
                 <span className="user-name">Tecnico</span>
