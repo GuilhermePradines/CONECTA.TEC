@@ -1,7 +1,9 @@
 import React from "react";
 import "./solicitar.css"
-export default function Tabela({ dados }) {
+import { Link } from "react-router-dom";
 
+export default function Tabela({ dados }) {
+  
 
   return (
     <table border="1">
@@ -10,6 +12,7 @@ export default function Tabela({ dados }) {
           <th>OS</th>
           <th>Equipamento</th>
           <th id="status">Status</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +20,12 @@ export default function Tabela({ dados }) {
           <tr key={item.id}>
             <td>{item.id}</td>
             <td>{item.equipamento}</td>
-            <td>{item.status_c}</td> 
+            <td>{item.status_c}</td>
+            <td>
+              <Link to={`/V_solicitacao/${item.id}`}>
+                edit
+              </Link>
+            </td> 
           </tr>
         ))}
       </tbody>

@@ -77,3 +77,29 @@ app.put("/edit/:id", (req, res) => {
         }
     });
 });
+
+
+app.put("/editc/:id", (req, res) => {
+    const { id } = req.params;
+    const {status_t } = req.body;
+
+    let sql = "UPDATE solicitacao SET status_t = ? WHERE id = ?";
+
+    db.query(sql, [status_t, id], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ message: "Erro ao atualizar a solicitação." });
+        } else {
+            res.status(200).send(result);
+        }
+    });
+});
+
+app.delete("/delete/:id",(req,res)=>{
+    const {id} = req.params;
+    let sql = "DELETE FROM solicitacao WHERE id =?"
+    db.query(sql,[id],(err,result)=>{
+        if (err) console.log(err);
+        else res.send(result);
+    })
+})

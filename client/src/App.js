@@ -10,6 +10,7 @@ import Login_Tecnico from './pages/Login_Tecnico/Login_Tecnico.js';
 import Tela_tecnico from './pages/Tela_tecnico/Tela_tecnico.js';
 import Header_Tecnico from './components/Header_Tecnico/Header.js';
 import SolicitarAprovacaoTecnico from './pages/Solicitar_Aprovacao_Tecnico/Solicitar_Aprovacao_Tecnico.js';
+import V_Solicitacao from './pages/Ver_Solicitacao/v_solocitacao.js';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/Tela_de_Analises_Cliente' element={<><Header/><Tela_de_Analises_Cliente/></>} />
             <Route path='/Tela_tecnico' element={<><Header_Tecnico/><Tela_tecnico/></>} />
             <Route path='/SolicitarAprovacaoTecnico/:id' element={<><Header_Tecnico/><SolicitarAprovacaoTecnico/></>} />
+            <Route path='/V_solicitacao/:id'element={<><Header/><V_Solicitacao/> </>}/>
         </Routes>
         
     </BrowserRouter>
