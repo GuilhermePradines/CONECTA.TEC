@@ -7,7 +7,7 @@ export default function Tabela_Analise({ dados }) {
     <table border="1">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>OS</th>
           <th>Equipamento</th>
           <th>Serviço</th>
           <th>Valor</th>

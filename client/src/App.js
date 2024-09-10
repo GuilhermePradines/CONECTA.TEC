@@ -24,7 +24,7 @@ function App() {
             <Route path='/Tela_inicial_Cliente' element={<><Header/><TelaInicialCliente /></>} />
             <Route path='/Tela_de_Analises_Cliente' element={<><Header/><Tela_de_Analises_Cliente/></>} />
             <Route path='/Tela_tecnico' element={<><Header_Tecnico/><Tela_tecnico/></>} />
-            <Route path='/SolicitarAprovacaoTecnico' element={<><Header_Tecnico/><SolicitarAprovacaoTecnico/></>} />
+            <Route path='/SolicitarAprovacaoTecnico/:id' element={<><Header_Tecnico/><SolicitarAprovacaoTecnico/></>} />
         </Routes>
         
     </BrowserRouter>

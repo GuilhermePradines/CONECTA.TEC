@@ -14,7 +14,7 @@ function Header_Tecnico (){
             </header>
             <nav className='nav'>
                 <ul>
-                    <li><Link to="/SolicitarAprovacaoTecnico">test</Link></li>
+                    
                 </ul>
             </nav>
         </div>

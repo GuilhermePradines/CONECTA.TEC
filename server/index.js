@@ -7,7 +7,7 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "password",
-    database: "conecta_tec_completo",
+    database: "CONECTA_TEC_COMPLETO",
 });
 
 app.use(express.json());
@@ -30,7 +30,7 @@ app.post("/solicitacao", (req, res) => {
     });
 });
 
-app.get("/getta", (req, res) => {
+app.get('/getta', (req, res) => {
     const sql = "SELECT * FROM solicitacao";
     db.query(sql, (err, result) => {
         if (err) {
@@ -46,3 +46,34 @@ app.listen(3001, () => {
     console.log("Server is running on port 3001");
 });
 
+app.get("/Tela_tecnico/:id", (req, res) => {
+    const { id } = req.params;
+    const sql = "SELECT * FROM solicitacao WHERE id = ?";
+    
+    db.query(sql, [id], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ message: "Erro ao buscar a solicitação." });
+        } else if (result.length === 0) {
+            res.status(404).send({ message: "Solicitação não encontrada." });
+        } else {
+            res.status(200).send(result[0]); 
+        }
+    });
+});
+
+app.put("/edit/:id", (req, res) => {
+    const { id } = req.params;
+    const { servico, valor, parecer_tec, status_c } = req.body;
+
+    let sql = "UPDATE solicitacao SET servico = ?, valor = ?, parecer_tec = ?, status_c = ? WHERE id = ?";
+
+    db.query(sql, [servico, valor, parecer_tec, status_c, id], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send({ message: "Erro ao atualizar a solicitação." });
+        } else {
+            res.status(200).send(result);
+        }
+    });
+});

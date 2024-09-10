@@ -1,95 +1,98 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Solicitar_Aprovacao_Tecnico.css';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function SolicitarAprovacaoTecnico() {
-  const [equipamento, setEquipamento] = useState('');
-  const [parecer, setParecer] = useState('');
-  const [tipo, setTipo] = useState('qualificacao');
-  const [valor, setValor] = useState('');
-  const [observacoes, setObservacoes] = useState('');
-  const [certificado, setCertificado] = useState(null);
+  const {id} = useParams();
+  const [dado,SetDados] = useState({});
+  const [values,SetValues] = useState([]);
+  const navigate = useNavigate();
 
-  const handleEquipamentoChange = (e) => setEquipamento(e.target.value);
-  const handleParecerChange = (e) => setParecer(e.target.value);
-  const handleTipoChange = (e) => setTipo(e.target.value);
-  const handleValorChange = (e) => setValor(e.target.value);
-  const handleObservacoesChange = (e) => setObservacoes(e.target.value);
-  const handleCertificadoChange = (e) => setCertificado(e.target.files[0]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você pode adicionar a lógica para processar o formulário, como enviar os dados para um servidor
-    console.log({
-      equipamento,
-      parecer,
-      tipo,
-      valor,
-      observacoes,
-      certificado,
+  useEffect(() => {
+    axios.get(`http://localhost:3001/Tela_tecnico/${id}`)
+      .then(response => {
+        SetValues(response.data); 
+      })
+      .catch(err => {
+        console.error("Erro na requisição:", err);
+      });
+  }, [id]);
+  const handlechangedodos = (dado) =>{
+    SetDados(predado=>({
+      ...predado,
+      [dado.target.name]:dado.target.value,
+      
+    }))
+  }
+
+  const handleclikbutton = () => {
+    axios.put(`http://localhost:3001/edit/${id}`, { // Incluindo o ID na URL
+        servico: dado.servico,
+        valor: dado.valor,
+        parecer_tec: dado.parecer_tec,
+        status_c: "ANÁLISE FINALIZADA",
+    })
+    .then((response) => {
+        navigate("/Tela_tecnico")
+        console.log(response);
+    })
+    .catch((err) => {
+        console.error("Erro na requisição:", err);
     });
-  };
+}
 
-  return (
+return (
     <div className="container">
-      <main className="aprovacaoTecnico">
-        <form className="formaprovacaoTecnico" onSubmit={handleSubmit}>
-          <label htmlFor="equipamento">Equipamento:</label>
-          <input
-            type="text"
-            id="equipamento"
-            name="equipamento"
-            value={equipamento}
-            onChange={handleEquipamentoChange}
-          />
-            <label htmlFor="observacoes">MOTIVOS/OBSERVAÇÕES:</label>
-          <textarea
-            id="observacoes"
-            name="observacoes"
-            value={observacoes}
-            onChange={handleObservacoesChange}
-          ></textarea>
+        <main className="aprovacaoTecnico">
+            <form className="formaprovacaoTecnico" onSubmit={(e) => {
+                e.preventDefault(); 
+                handleclikbutton();
+            }}>
+                <p>{values.equipamento}</p>
+                <p>{values.observacoes}</p>
 
-          
+                <label htmlFor="servico">Serviço:</label>
+                <input type='text' className="servico" name='servico' onChange={handlechangedodos} required />
 
-          <label htmlFor="tipo">Tipo:</label>
-          <select id="tipo" name="tipo" value={tipo} onChange={handleTipoChange}>
-            <option value="qualificacao">QUALIFICAÇÃO</option>
-            <option value="manutencao">MANUTENÇÃO</option>
-            <option value="calibracao">CALIBRAÇÃO</option>
-          </select>
+                <label htmlFor="valor">Valor:</label>
+                <input
+                    type='number'
+                    id="valor"
+                    className="valor"
+                    onChange={handlechangedodos}
+                    required
+                    name='valor'
+                />
 
-          <label htmlFor="valor">Valor:</label>
-          <input
-            type="text"
-            id="valor"
-            name="valor"
-            value={valor}
-            onChange={handleValorChange}
-          />
+                <label htmlFor="parecer">Parecer Tec.:</label>
+                <textarea
+                    type="text"
+                    id="parecer"
+                    className="parecer"
+                    onChange={handlechangedodos}
+                    required
+                    name='parecer_tec'
+                ></textarea>
 
-          <label htmlFor="parecer">Parecer Tec.:</label>
-          <textarea
-            id="parecer"
-            name="parecer"
-            value={parecer}
-            onChange={handleParecerChange}
-          ></textarea>
+                <label htmlFor="certificado">Anexar Certificado:</label>
+                <input
+                    type="file"
+                    id="certificado"
+                    name="certificado"
+                />
 
-          <label htmlFor="certificado">Anexar Certificado:</label>
-          <input
-            type="file"
-            id="certificado"
-            name="certificado"
-            onChange={handleCertificadoChange}
-          />
-
-          <button type="submit">
-            Solicitar Aprovação
-          </button>
-        </form>
-      </main>
+                <button type="submit">
+                    Solicitar Aprovação
+                </button>
+            </form>
+        </main>
     </div>
-  );
+);
+
 }
 
 export default SolicitarAprovacaoTecnico;

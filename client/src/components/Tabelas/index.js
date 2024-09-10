@@ -7,8 +7,8 @@ export default function Tabela({ dados }) {
     <table border="1">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Tipo de Serviço</th>
+          <th>OS</th>
+          <th>Equipamento</th>
           <th id="status">Status</th>
         </tr>
       </thead>
