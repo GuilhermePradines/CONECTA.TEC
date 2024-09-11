@@ -46,53 +46,64 @@ function SolicitarAprovacaoTecnico() {
 }
 
 return (
-    <div className="container">
-        <main className="aprovacaoTecnico">
-            <form className="formaprovacaoTecnico" onSubmit={(e) => {
-                e.preventDefault(); 
-                handleclikbutton();
-            }}>
-                <p>{values.equipamento}</p>
-                <p>{values.observacoes}</p>
+    <div className="solicitarAprovacaoContainer">
+      <main className="solicitarAprovacaoMain">
+        <form
+          className="solicitarAprovacaoForm"
+          onSubmit={(e) => {
+            e.preventDefault(); 
+            handleclikbutton();
+          }}
+        >
+          <label>Equipamento:</label>
+          <p>{values.equipamento}</p><br/>
+          
+          <label>Observações:</label>
+          <p>{values.observacoes}</p><br/>
 
-                <label htmlFor="servico">Serviço:</label>
-                <input type='text' className="servico" name='servico' onChange={handlechangedodos} required />
+          <label htmlFor="servico">Serviço:</label>
+          <input
+            type='text'
+            className="servico"
+            name='servico'
+            onChange={handlechangedodos}
+            required
+          />
 
-                <label htmlFor="valor">Valor:</label>
-                <input
-                    type='number'
-                    id="valor"
-                    className="valor"
-                    onChange={handlechangedodos}
-                    required
-                    name='valor'
-                />
+          <label htmlFor="valor">Valor:</label>
+          <input
+            type='number'
+            id="valor"
+            className="valor"
+            onChange={handlechangedodos}
+            required
+            name='valor'
+          />
 
-                <label htmlFor="parecer">Parecer Tec.:</label>
-                <textarea
-                    type="text"
-                    id="parecer"
-                    className="parecer"
-                    onChange={handlechangedodos}
-                    required
-                    name='parecer_tec'
-                ></textarea>
+          <label htmlFor="parecer">Parecer Tec.:</label>
+          <textarea
+            id="parecer"
+            className="parecer"
+            onChange={handlechangedodos}
+            required
+            name='parecer_tec'
+          ></textarea>
 
-                <label htmlFor="certificado">Anexar Certificado:</label>
-                <input
-                    type="file"
-                    id="certificado"
-                    name="certificado"
-                />
+          <label htmlFor="certificado">Anexar Certificado:</label>
+          <input
+            type="file"
+            id="certificado"
+            name="certificado"
+            onChange={handlechangedodos}
+          />
 
-                <button type="submit">
-                    Solicitar Aprovação
-                </button>
-            </form>
-        </main>
+          <button type="submit">
+            Solicitar Aprovação
+          </button>
+        </form>
+      </main>
     </div>
-);
-
+  );
 }
 
 export default SolicitarAprovacaoTecnico;

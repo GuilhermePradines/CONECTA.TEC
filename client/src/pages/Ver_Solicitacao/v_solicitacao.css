@@ -1,0 +1,79 @@
+/* V_solicitacao.css */
+
+.V_solicitacao-container {
+
+    max-width: 800px;
+    margin: 70px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #d7d7d795;
+  }
+  
+  .V_solicitacao-container label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .V_solicitacao-container p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .V_solicitacao-content {
+    margin-bottom: 20px;
+  }
+  
+  .V_solicitacao-buttons {
+    display: flex;
+    
+    gap: 20px;
+  }
+  
+  .V_solicitacao-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .V_solicitacao-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .V_solicitacao-buttons button:active {
+    transform: scale(0.98);
+  }
+  
+  .V_solicitacao-buttons .reject {
+    background-color: #dc3545;
+  }
+  
+  .V_solicitacao-buttons .reject:hover {
+    background-color: #c82333;
+  }
+  
+  .V_solicitacao-buttons .accept {
+    background-color: #28a745;
+  }
+  
+  .V_solicitacao-buttons .accept:hover {
+    background-color: #218838;
+  }
+  
+  .V_solicitacao-buttons .delete {
+    background-color: #ffc107;
+    color: #212529;
+  }
+  
+  .V_solicitacao-buttons .delete:hover {
+    background-color: #e0a800;
+  }
+  

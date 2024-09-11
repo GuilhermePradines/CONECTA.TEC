@@ -1,67 +1,63 @@
+/* SolicitarAprovacaoTecnico.css */
 
-
-
-
-
-.aprovacaoTecnico {
+/* Container específico para o componente */
+.solicitarAprovacaoContainer {
+    max-width: 900px;
+    margin: 0 auto;
     padding: 20px;
-}
-
-.formaprovacaoTecnico {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  }
+  
+  /* Estilo para o componente principal */
+  .solicitarAprovacaoMain {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Formulário específico para o componente */
+  .solicitarAprovacaoForm {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-}
-
-.formaprovacaoTecnico label {
-    grid-column: span 2;
+  }
+  
+  .solicitarAprovacaoForm label {
     font-weight: bold;
-}
-
-.formaprovacaoTecnico input[type="text"],
-.formaprovacaoTecnico textarea,
-.formaprovacaoTecnico input[type="file"] {
+  }
+  
+  .solicitarAprovacaoForm input[type="text"],
+  .solicitarAprovacaoForm input[type="number"],
+  .solicitarAprovacaoForm textarea,
+  .solicitarAprovacaoForm input[type="file"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-}
-
-.formaprovacaoTecnico textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .solicitarAprovacaoForm textarea {
     resize: vertical;
     height: 80px;
-}
-
-.formaprovacaoTecnico button {
-    width: 25%;
-    grid-column: span 2;
-    padding: 10px;
-    background-color: #2e2f50;
+  }
+  
+  .solicitarAprovacaoForm button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: #ffffff;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-}
-
-.formaprovacaoTecnico button:hover {
-    width: 25%;
-    background-color: #1b1c33;
-}
-
-#sol_apv{
-    color: white;
-}
-
-
-.aprovacaoTecnico{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-
-}
-.formaprovacaoTecnico{
-    display: flex;
-    flex-direction: column;
-width: 80%;
-}
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    align-self: flex-start;
+  }
+  
+  .solicitarAprovacaoForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  .solicitarAprovacaoForm button:active {
+    transform: scale(0.98);
+  }
+  

@@ -25,8 +25,8 @@ export default function Tabela_T({ dados }) {
             <td>R$ {item.valor}</td> 
             <td>{item.status_t}</td>
             <td>
-              <Link to={`/SolicitarAprovacaoTecnico/${item.id}`}>
-                edit
+              <Link to={`/SolicitarAprovacaoTecnico/${item.id}`} className="link">
+                ..
               </Link>
             </td>
           </tr>

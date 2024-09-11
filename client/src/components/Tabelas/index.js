@@ -22,8 +22,8 @@ export default function Tabela({ dados }) {
             <td>{item.equipamento}</td>
             <td>{item.status_c}</td>
             <td>
-              <Link to={`/V_solicitacao/${item.id}`}>
-                edit
+              <Link to={`/V_solicitacao/${item.id}`} className="link">
+                Visualizar
               </Link>
             </td> 
           </tr>

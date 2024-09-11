@@ -44,4 +44,15 @@ table {
       padding: 8px;
     }
   }
+.link{
+  color: #000000 ;
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 16px;
+  
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgb(167, 167, 167);
+}
   

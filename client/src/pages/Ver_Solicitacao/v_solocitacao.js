@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import './v_solicitacao.css';
 
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -59,22 +60,31 @@ const handleclikbuttonDelete = () =>{
 
 
 return (
-    <div className="container">
-      <div>
-        <p>{values.equipamento}</p>
-        <p>{values.servico}</p>
-        <p>{values.observacoes}</p>
-        <p>{values.valor}</p>
-        <p>{values.parecer_tec}</p>
-               
-      </div>
-      <div>
-        <button onClick={handleclikbuttonAceito}>Aceitar</button>
-        <button onClick={handleclikbuttonRecusado}>Recusar</button>
-        <button onClick={handleclikbuttonDelete}>Deletar</button>
-      </div>
+  <div className="V_solicitacao-container">
+    <div className="V_solicitacao-content">
+      <label>Equipamento:</label>
+      <p>{values.equipamento}</p><br/>
+
+      <label>Serviço:</label>
+      <p>{values.servico}</p><br/>
+
+      <label>Observações:</label>
+      <p>{values.observacoes}</p><br/>
+
+     
+      <p><b>Valor:</b>R$ {values.valor}</p><br/>
+      
+      <label>Parecer Tec:</label>
+      <p>{values.parecer_tec}</p>
     </div>
+    <div className="V_solicitacao-buttons">
+      <button className="accept" onClick={handleclikbuttonAceito}>Aceitar</button>
+      <button className="reject" onClick={handleclikbuttonRecusado}>Recusar</button>
+      <button className="delete" onClick={handleclikbuttonDelete}>Cancelar</button>
+    </div>
+  </div>
 );
+
 
 }
 
