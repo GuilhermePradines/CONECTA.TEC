@@ -41,7 +41,7 @@ function SolicitarServiçosCliente() {
             <div id="form">
               <div>
                 <label htmlFor="equipamento">Equipamento:</label><br />
-                <input type="text" maxLength="30" id="equipamento" name="equipamento" className="equipamento" onChange={handlechangevalues} required/>
+                <input type="text" maxLength="50" id="equipamento" name="equipamento" className="equipamento" onChange={handlechangevalues} required/>
               </div>
               {/* <div>
                 <label htmlFor="servico">Serviço:</label><br />
@@ -49,7 +49,7 @@ function SolicitarServiçosCliente() {
               </div> */}
               <div>
                 <label htmlFor="observacoes">MOTIVOS/OBSERVAÇÕES:</label><br />
-                <textarea id="observacoes" maxLength="30" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues} required></textarea>
+                <textarea id="observacoes" maxLength="200" name="observacoes" cols="60" rows="20" className="observacoes" onChange={handlechangevalues} required></textarea>
               </div>
               <div id="botao_1">
                 <button type="submit" className="butao" >Solicitar</button>

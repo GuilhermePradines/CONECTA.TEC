@@ -50,12 +50,18 @@ const handleclikbuttonRecusado = () => {
   });
 }
 
-const handleclikbuttonDelete = () =>{
-  axios.delete(`http://localhost:3001/delete/${id}`,{
+const handleclikbuttonCancelado = () => {
+  axios.put(`http://localhost:3001/editc/${id}`, { 
 
-  }).then((response)=>{
-    navigate("/Tela_inicial_Cliente")
+      status_t:"Cancelado",
   })
+  .then((response) => {
+      navigate("/Tela_inicial_Cliente")
+      console.log(response);
+  })
+  .catch((err) => {
+      console.error("Erro na requisição:", err);
+  });
 }
 
 
@@ -77,11 +83,17 @@ return (
       <label>Parecer Tec:</label>
       <p>{values.parecer_tec}</p>
     </div>
+    
     <div className="V_solicitacao-buttons">
-      <button className="accept" onClick={handleclikbuttonAceito}>Aceitar</button>
-      <button className="reject" onClick={handleclikbuttonRecusado}>Recusar</button>
-      <button className="delete" onClick={handleclikbuttonDelete}>Cancelar</button>
+    {values.status_c === "ANÁLISE FINALIZADA" && (
+      <div className="V_solicitacao-buttons">
+        <button className="accept" onClick={handleclikbuttonAceito}>Aceitar</button>
+        <button className="reject" onClick={handleclikbuttonRecusado}>Recusar</button>
+      </div>
+    )}
+      <button className="delete" onClick={handleclikbuttonCancelado}>Cancelar</button>
     </div>
+    
   </div>
 );
 

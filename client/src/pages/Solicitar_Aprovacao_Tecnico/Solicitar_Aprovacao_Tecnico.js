@@ -63,6 +63,7 @@ return (
 
           <label htmlFor="servico">Serviço:</label>
           <input
+            maxLength="50"
             type='text'
             className="servico"
             name='servico'
@@ -87,6 +88,7 @@ return (
             onChange={handlechangedodos}
             required
             name='parecer_tec'
+            maxLength="200"
           ></textarea>
 
           <label htmlFor="certificado">Anexar Certificado:</label>
