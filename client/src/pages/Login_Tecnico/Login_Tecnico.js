@@ -28,26 +28,11 @@ function Login_Tecnico() {
         </header>
         <div id="logar">
             <input
-            type="text"
-            placeholder="Login"
-            id="caixa_login"
-            value={login}
-            onChange={handleLoginChange}
-            />
-            <input
-            type="password"
-            placeholder="Senha"
-            id="caixa_senha"
-            value={senha}
-            onChange={handleSenhaChange}
-            />
+            type="text" placeholder="Login" id="caixa_login" value={login} onChange={handleLoginChange}  />
+            <input type="password" placeholder="Senha" id="caixa_senha" value={senha} onChange={handleSenhaChange} />
             <div id="botao">
             <Link to="/" id='butao'>TÉCNICO</Link>
-            <button
-                type="submit"
-                onClick={logar}
-                id="butao"
-            >
+            <button type="submit" onClick={logar} id="butao">
                 Entrar
             </button>
             </div>

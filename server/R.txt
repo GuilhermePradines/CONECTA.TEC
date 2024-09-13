@@ -3,3 +3,7 @@ express
 cors 
 nodemon
 react-router-dom
+jsonwebtoken  
+bcryptjs
+cors
+jwt-decode

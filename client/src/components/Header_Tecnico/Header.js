@@ -1,7 +1,17 @@
 import './Header.css'
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+
 function Header_Tecnico (){
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        localStorage.removeItem('role');
+        navigate("/login")
+  };
+    
     return(
         <div className="container">
             <header className='header'>
@@ -9,7 +19,7 @@ function Header_Tecnico (){
             <div className="user-info">
                 <span className="user-icon">👤</span>
                 <span className="user-name">Tecnico</span>
-                <Link to= "/">Sair</Link>
+                <button onClick={logout} >Sair</button>
             </div>
             </header>
             <nav className='nav'>
