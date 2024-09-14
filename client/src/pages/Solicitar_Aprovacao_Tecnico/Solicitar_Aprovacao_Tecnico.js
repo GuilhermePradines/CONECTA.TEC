@@ -30,7 +30,7 @@ function SolicitarAprovacaoTecnico() {
   }
 
   const handleclikbutton = () => {
-    axios.put(`http://localhost:3001/edit/${id}`, { // Incluindo o ID na URL
+    axios.put(`http://localhost:3001/edit/${id}`, {
         servico: dado.servico,
         valor: dado.valor,
         parecer_tec: dado.parecer_tec,
@@ -91,13 +91,13 @@ return (
             maxLength="200"
           ></textarea>
 
-          <label htmlFor="certificado">Anexar Certificado:</label>
+          {/* <label htmlFor="certificado">Anexar Certificado:</label>
           <input
             type="file"
             id="certificado"
             name="certificado"
             onChange={handlechangedodos}
-          />
+          /> */}
 
           <button type="submit">
             Solicitar Aprovação

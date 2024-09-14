@@ -13,20 +13,14 @@ function TelaInicialCliente() {
             
             if (token) {
                 try {
-                    
                     const decodedToken = jwtDecode(token);
                     const userId = decodedToken.id; 
-                    
-                    
                     const response = await axios.get("http://localhost:3001/getcliente", {
                         headers: {
                             Authorization: `Bearer ${token}` 
                         }
                     });
-
-                    setListItens(response.data);
-                    
-                    
+                    setListItens(response.data); 
                 } catch (error) {
                     console.error('Erro ao buscar as solicitações', error);
                 }

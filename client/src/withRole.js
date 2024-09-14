@@ -11,7 +11,7 @@ const withRole = (WrappedComponent, allowedRoles) => {
 
     const userRole = getUserRole();
     if (!allowedRoles.includes(userRole)) {
-      return alert('voce não tem prermição'), <Navigate to="/login" /> 
+      return alert('voce não tem permissão'), <Navigate to="/login" /> 
       ;
     }
 

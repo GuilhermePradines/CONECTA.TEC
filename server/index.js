@@ -3,7 +3,7 @@ const app = express();
 const mysql = require("mysql");
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+
 
 const db = mysql.createPool({
     host: "localhost",

@@ -40,23 +40,23 @@
     
     height: 100%;
 }
-#butao{
+#botao button{
     background-color: gray;
     border: 2px solid black;
     box-shadow: 4px 4px 0 black;
     color: black;
     display: block;
     font-size: 1rem;
-    padding: .75rem 0.75rem ;
+    padding: .60rem 0.60rem ;
     max-width: 14rem;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    width: 120px;
+    width: 100px;
     
     
 }
-#butao:hover{
+#botao button:hover{
     cursor: pointer;
     background-color: rgb(0, 229, 255);
 }
@@ -72,7 +72,7 @@ h1{
 /* Exemplo de estilo para a classe selected */
 
   
-#caixa_senha.selected {
+#botao button.selected {
 background-color: #007bff; /* Cor para o botão selecionado */
 color: white;
 border: 1px solid #007bff; /* Borda para o botão selecionado */
